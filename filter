@@ -1,0 +1,17 @@
+data배열에서 ex값을 제외 한 값을 배열로(filter 함수를 사용하시오) 만들어라.
+
+var data = [1,2,3,4,5,6,7,8,9];
+	var ex = [3,4,5];
+	
+	var _arr = data.filter(function(val){
+		//console.log(val);	
+	//	console.log(ex.indexOf(val));
+		if(ex.indexOf(val) === -1){
+// 			console.log(val);
+			return val
+		}
+	});
+	console.log(_arr);
+
+
+
