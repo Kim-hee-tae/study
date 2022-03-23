@@ -14,8 +14,8 @@ select * from x left outer join y on x.id = y.id
 
 결과값은
 x.id  x.nm  y.id  y.nm    <-- 컬럼명
-123	  aaa	  123	  aaa     <-- 데이터
-222	  aaa	  222	  aaa     <-- 데이터
+123   aaa	  123	  aaa     <-- 데이터
+222   aaa	  222	  aaa     <-- 데이터
 333	  aaa		              <-- 데이터
 
 x left :  x 테이블을 기준으로 조인을 하는 것이다. 그러므로 x테이블의 값은 무조건 가져오는 것.
