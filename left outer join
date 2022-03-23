@@ -1,0 +1,43 @@
+
+with x as(
+select '123' id ,  'aaa' nm from dual
+union all
+select '222' id ,  'aaa' nm from dual
+union all
+select '333' id ,  'aaa' nm from dual
+),y as(
+select '123' id ,  'aaa' nm from dual
+union all
+select '222' id ,  'aaa' nm from dual
+)
+select * from x left outer join y on x.id = y.id
+
+결과값은
+x.id  x.nm  y.id  y.nm    <-- 컬럼명
+123	  aaa	  123	  aaa     <-- 데이터
+222	  aaa	  222	  aaa     <-- 데이터
+333	  aaa		              <-- 데이터
+
+x left :  x 테이블을 기준으로 조인을 하는 것이다. 그러므로 x테이블의 값은 무조건 가져오는 것.
+x right y 이면 y 테이블이 기준이 된다. left 면 구문에서 x left y  면  x 가 기준. x right y 면 y가 기준.
+
+
+with x as(
+select '123' id ,  'aaa' nm from dual
+union all
+select '222' id ,  'aaa' nm from dual
+union all
+select '333' id ,  'aaa' nm from dual
+),y as(
+select '123' id ,  'aaa' nm from dual
+union all
+select '222' id ,  'aaa' nm from dual
+)
+select * from x, y
+where x.id = y.id(+)
+
+위 결과값은 같다. 표기 방법은 (+) 가 붙은 쪽이 속하는 그룹이 된다. (+)가 없는 컬럼값이 기준이 된다. 
+헷갈리지 말것 + 표기 법은 + 가 없는 쪽이 기준이 되는 것이다. 없는게 기준.
+
+left, right 표기 법은 그냥 있는 그대로 해석해서 left 면 왼쪽이 기준, right면 오른쪽 테이블이 기준 ! 단순하게 생각 할 것.
+
